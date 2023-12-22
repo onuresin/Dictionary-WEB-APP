@@ -1,3 +1,9 @@
+import Header from "./Components/Header";
+
 export default function App() {
-  return;
+  return (
+    <div className="container">
+      <Header />
+    </div>
+  )
 }
