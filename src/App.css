@@ -6,10 +6,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Inconsolata', monospace;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Lora', serif;
-
+    font-family: 'Inter', Sans-serif;
 }
 :root {
     --HalfBlack: #1F1F1F;

@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export default function Header() {
-    const [selectFont, setSelectFont] = useState('sans-serif');
+    const [selectFont, setSelectFont] = useState('Serif');
     const [darkTheme, setDarkTeheme] = useState(false);
-
+   
     const handleFontsChange = (font) => {
         setSelectFont(font);
         document.body.style.fontFamily = font;
@@ -23,8 +23,8 @@ export default function Header() {
                 <div className="inner-right">
                     <span className="right-font">
                         <select value={selectFont} onChange={(e) => handleFontsChange(e.target.value)}>
-                            <option value="sans-serif">Sans-Serif</option>
                             <option value="serif">Serif</option>
+                            <option value="Sans-serif">Sans-Serif</option>
                             <option value="monospace">Mono</option>
                         </select>
                     </span>
