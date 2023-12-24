@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
     const [selectFont, setSelectFont] = useState('Serif');
-    const [darkTheme, setDarkTeheme] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(false);
    
     const handleFontsChange = (font) => {
         setSelectFont(font);
@@ -10,9 +10,11 @@ export default function Header() {
     };
 
     const handleThemeChange = () => {
-        setDarkTeheme(!darkTheme);
-        document.body.classList.toggle('dark-theme');
+        setDarkTheme(!darkTheme);
     }
+    useEffect(() => {
+        document.body.classList.toggle('dark-theme', darkTheme);
+    }, [darkTheme]);
 
     return (
         <div className="header">

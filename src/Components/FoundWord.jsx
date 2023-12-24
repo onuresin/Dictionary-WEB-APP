@@ -22,48 +22,58 @@ const FetchDatas = ({ fetchWord }) => (
                                     <div key={index} className="phonetics">
                                         {x.audio &&
                                             <>
-                                                <div className="found-sound">
-                                                    
+                                                <div className="found-sound">   
                                                     <img onClick={() => {
-                                                        const audio = new Audio(x.audio)
-                                                        audio.play() }} 
-                                                        src="/images/play-button.svg" alt="play-nouns" />
+                                                    const audio = new Audio(x.audio)
+                                                    audio.play() }} 
+                                                    src="/images/play-button.svg" alt="play-nouns" />
                                                 </div>
                                             </>
                                         }
                                     </div>
-                              
                                 )
                             })
                         }
                     </>}
-                </div>
+        </div>
 ) 
 const SynonymsList = ({synonyms, setSearchTerm}) => (
     <div className="synonyms">
         <p>Synonyms</p>
         <span>
             {synonyms.map((synonym, index) => (
-            <p className='synonymsP' onClick={() => setSearchTerm(synonym)} key={index}>
-            {synonym}
-            </p>
+                <p className='synonymsP' onClick={() => setSearchTerm(synonym)} key={index}>{synonym}</p>
             ))}
         </span>
     </div>
 )
 const SourceInfo = ({ sourceUrls }) => (
     <div className="source">
-        {sourceUrls}
+            <span className="stick">
+                <img src="images/horizontal-stick.svg"/>
+            </span>
+            <span className="source-bot">
+                <h5>Source</h5>
+                <span className="source-url" onClick={() => window.open(sourceUrls, '_blank')}>
+                    {sourceUrls}
+                    <img src="images/external-link.svg" alt="{sourceUrls}" />
+                </span>
+            </span>
     </div>
 );
 
 const WordType = ({ type, meanings, synonyms, setSearchTerm, sourceUrls }) => (
     <div className={type.toLowerCase()}>
-        <h3>{type}</h3>
-        <p>Meaning</p>
-        <MeaningList meanings={meanings} />
-        {type === 'Noun' && <SynonymsList synonyms={synonyms} setSearchTerm={setSearchTerm} />}
-        {type === 'Verb' && sourceUrls && <SourceInfo sourceUrls={sourceUrls} />}
+        <span className="text-vertical">
+            <h3>{type}</h3>
+            <img src="images/horizontal-stick.svg" alt="" />
+        </span>
+       <span className="meanings">
+            <p>Meaning</p>
+            <MeaningList meanings={meanings} />
+            {type === 'Noun' && <SynonymsList synonyms={synonyms} setSearchTerm={setSearchTerm} />}
+            {type === 'Verb' && sourceUrls && <SourceInfo sourceUrls={sourceUrls} />}
+       </span>
     </div>
 )
 
