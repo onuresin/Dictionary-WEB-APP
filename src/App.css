@@ -28,10 +28,16 @@ body {
     --RosaRed: #FF5252;
     --Purple: #A445ED;
 }
+/*DARK THEME*/
+
 body.dark-theme {
     background-color: var(--DarkBlack);
     transition: background-color 0.3s ease;
 }
+
+
+
+/**//**//**//**/
 .container {
     display: flex;
     flex-direction: column;
@@ -86,6 +92,14 @@ body.dark-theme {
         border: 0;
         background-color: var(--BoneWhite);
     }
+}
+.searchBar.error {
+    border: 2px solid #FF5252;
+}
+.hoaydaa {
+    padding-top: 8px;
+    font-size: 20px;
+    color: var(--RosaRed);
 }
 /* ERROR CONTAINER */
 .error-container {
