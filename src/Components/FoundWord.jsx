@@ -12,7 +12,10 @@ const FetchDatas = ({ fetchWord }) => (
     <div className="wordfound-section">
                     {fetchWord && 
                     <>
-                        <h2>{fetchWord.word}</h2>
+                        <span className="found-sec">
+                            <h3>{fetchWord.word}</h3>
+                            <h2>{fetchWord.phonetic}</h2>
+                        </span>
                         {
                             fetchWord.phonetics.map((x, index) => {
                                 return (
@@ -20,7 +23,7 @@ const FetchDatas = ({ fetchWord }) => (
                                         {x.audio &&
                                             <>
                                                 <div className="found-sound">
-                                                    <p>{x.text}</p>
+                                                    
                                                     <img onClick={() => {
                                                         const audio = new Audio(x.audio)
                                                         audio.play() }} 
@@ -97,9 +100,9 @@ export default function FoundWord({ fetchWord, setSearchTerm }) {
             <>
                 <div className="error-container">
                     <span>
-                        <img src="images/😕.svg" alt="😕" />
+                        <img src="images/sad.svg" alt="😕" />
                     </span>
-                    <span>
+                    <span className="error-text">
                         <h4>No Definitions Found</h4>
                         <h5>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</h5>
                     </span>

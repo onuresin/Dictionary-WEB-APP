@@ -7,6 +7,7 @@
 }
 body {
     font-family: 'Inter', Sans-serif;
+    background-color: var(--PureWhite);
 }
 :root {
     --HalfBlack: #1F1F1F;
@@ -55,4 +56,84 @@ body {
         }
     }
 }
-/*SEARCH*/
+/*SEARCH BAR*/
+.search-container {
+    width: 327px;
+    margin: 0 auto;
+}
+.searchBar {
+    margin: 0 auto;
+    width: 327px;
+    padding: 14px 24px;
+    background-color: var(--BoneWhite);
+    border-radius: 16px;
+    & form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 0;
+    }
+    & form input {
+        font-size: 16px;
+        font-weight: 700;
+        border: 0;
+        background-color: var(--BoneWhite);
+    }
+}
+/* ERROR CONTAINER */
+.error-container {
+    width: 327px;
+    padding-top: 132px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    align-items: center;
+}
+.error-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    & h4 {
+        color: var(--DarkGrey);
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+
+    }
+    & h5 {
+        text-align: center;
+        color: var(--HalfGrey);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+
+/*SEARC RESULTS - WordFound*/
+.wordfound-section {
+    width: 327px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.found-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    & h3 {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--DarkGrey);
+    }
+    & h2 {
+        color: #A445ED;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+.found-sound img {
+    width: 48px;
+}
