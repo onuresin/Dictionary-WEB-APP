@@ -29,3 +29,30 @@ body {
         background-color: var(--DarkBlack);
     }
 }
+/* HEADER */
+.header-inner {
+    padding: 28px 24px;
+    margin: 0 auto;
+    width: 375px;
+    display: flex;
+    gap: 95px;
+    & .inner-left img {
+        width: 28px;
+    }
+    & .inner-right {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        & .right-font select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url(images/path-down.svg) no-repeat;
+            background-position: right 5px center;
+            background-size: 12px 8px;
+            border: 0;
+            width: 98px;
+        }
+    }
+}
+/*SEARCH*/

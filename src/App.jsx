@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import Search from "./Components/Search";
 import FoundWord from "./Components/FoundWord";
+import './App.css'
 
 export default function App() {
   const [selectFont, setSelectFont] = useState('sans-serif')

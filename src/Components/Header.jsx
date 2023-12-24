@@ -28,11 +28,12 @@ export default function Header() {
                             <option value="monospace">Mono</option>
                         </select>
                     </span>
+                    <img src="images/vertical-short.svg" alt="vertical stick" />
                     <span className="right-theme" onClick={handleThemeChange}>
                         {darkTheme ? 
-                            (<img src="images/Lightmode.svg" alt="light mode" />) 
+                            (<img src="images/darkmode.svg" alt="light mode" />) 
                             : 
-                            (<img src="images/darkmode.svg"  alt="dark mode" />)
+                            (<img src="images/Lightmode.svg" alt="dark mode" />)
                         }
                     </span>
                 </div>

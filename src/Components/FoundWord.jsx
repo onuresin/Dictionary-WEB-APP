@@ -93,9 +93,18 @@ export default function FoundWord({ fetchWord, setSearchTerm }) {
           </>
         )}
         
-        {!fetchWord &&  (// !fetchword kontrol edilecek ve searchbar value boş olmamalı bu kontrol edilecek
+        {!fetchWord &&  (
             <>
-                
+                <div className="error-container">
+                    <span>
+                        <img src="images/😕.svg" alt="😕" />
+                    </span>
+                    <span>
+                        <h4>No Definitions Found</h4>
+                        <h5>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</h5>
+                    </span>
+
+                </div>
             </>
         )}
         {//searchbar boş olup olmadığı kontrol edilecek
