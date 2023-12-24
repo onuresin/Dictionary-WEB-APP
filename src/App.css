@@ -40,6 +40,7 @@ body.dark-theme {
     }
     & .text-vertical {
         & h3 {
+            text-transform: lowercase;
             color: var(--PureWhite);
         }
     }
@@ -272,3 +273,63 @@ body.dark-theme {
     }
 }
 
+@media (500px <= width <= 1439px ) {
+    .container, .header, .header-inner, .search-container, .wordfound-section, .noun, .verb {
+        width: 768px;
+        margin: 0 auto;
+    }
+    .header-inner {
+        gap: 458px;
+        & .inner-left img {
+            width: 32px;
+        }
+    }
+    .searchBar {
+        width: 768px;
+    }
+    .found-sec {
+        & h3 {
+           font-size: 64px;
+           font-weight: 700;
+        }
+        & h2 {
+          font-size: 24px;
+          font-weight: 400;  
+        }
+    }
+    .found-sound img {
+        width: 75px;
+    }
+    .text-vertical {
+        gap:32;
+        & h3 {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+        & img {
+            height: 15px;
+            width: 700px;
+        }
+    }
+    .meanings {
+        & .desc {
+            font-size: 20px;
+        }
+    }
+    .meanings ul li {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .source {
+        & .stick img {
+            width: 760px;
+            height: 10px;
+        }
+        & .source-bot {
+            flex-direction: row;
+            gap: 67px;
+        }
+    }
+}

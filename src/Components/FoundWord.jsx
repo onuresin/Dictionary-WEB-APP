@@ -69,7 +69,7 @@ const WordType = ({ type, meanings, synonyms, setSearchTerm, sourceUrls }) => (
             <img src="images/horizontal-stick.svg" alt="" />
         </span>
        <span className="meanings">
-            <p>Meaning</p>
+            <p className="desc">Meaning</p>
             <MeaningList meanings={meanings} />
             {type === 'Noun' && <SynonymsList synonyms={synonyms} setSearchTerm={setSearchTerm} />}
             {type === 'Verb' && sourceUrls && <SourceInfo sourceUrls={sourceUrls} />}
