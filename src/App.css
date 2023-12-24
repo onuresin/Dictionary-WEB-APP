@@ -64,6 +64,13 @@ body.dark-theme {
             }
         }
     }
+    .searchBar input {
+        width: 500px;
+        &:focus {
+            outline: none;
+            background-color: #F4F4F4;
+        }
+    }
     .error-text {
         & h4 {
             color: #FFF;
@@ -332,4 +339,81 @@ body.dark-theme {
             gap: 67px;
         }
     }
+}
+/**//**//**//**//**//**//**//**//**//**//**/
+@media(min-width:1440px) {
+    .container, .header, .header-inner, .search-container, .wordfound-section, .noun, .verb {
+        width: 1440px;
+        margin: 0 auto;
+    }
+    .header-inner {
+        gap: 1178px;
+    }
+    .searchBar {
+        width: 1440px;
+    }
+    .searchBar input {
+        width: 500px;
+        &:focus {
+            outline: none;
+            background-color: #F4F4F4;
+        }
+    }
+    .found-sec {
+        & h3 {
+           font-size: 64px;
+           font-weight: 700;
+        }
+        & h2 {
+          font-size: 24px;
+          font-weight: 400;  
+        }
+    }
+    .found-sound img {
+        width: 75px;
+        cursor: url('images/mouse-pointer.svg'), auto;
+    }
+    .found-sound img:hover {
+        background-image: url(images/play-button-hoover.svg);
+        background-repeat: no-repeat;
+        
+    }
+    
+    .text-vertical {
+        gap:23px;
+        & h3 {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: lowercase;
+        }
+        & img {
+            height: 15px;
+            width: 1380px;
+        }
+    }
+    .meanings {
+        & .desc {
+            font-size: 20px;
+        }
+    }
+    .meanings ul li {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .source {
+        & .stick img {
+            width: 1480px;
+            height: 10px;
+        }
+        & .source-bot {
+            flex-direction: row;
+            gap: 67px;
+        }
+    }
+    .error-container {
+        width: 736px;
+        margin: 0 auto;
+    }
+
 }
