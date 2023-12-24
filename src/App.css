@@ -33,6 +33,41 @@ body {
 body.dark-theme {
     background-color: var(--DarkBlack);
     transition: background-color 0.3s ease;
+    & .found-sec {
+        & h3 {
+            color: var(--PureWhite);
+        }
+    }
+    & .text-vertical {
+        & h3 {
+            color: var(--PureWhite);
+        }
+    }
+    .source-url {
+        color: var(--PureWhite);
+    }
+    .header-inner {
+        & .inner-right {
+            & .right-font select {
+                color: #F4F4F4;
+                font-weight: bold;  
+                &:focus {
+                    outline: none;
+                }             
+                & option {
+                    border-radius: 16px;
+                    font-weight: bold;
+                    background-color: var(--HalfBlack);
+                    box-shadow: 0px 5px 30px 0px #A445ED;
+                }
+            }
+        }
+    }
+    .error-text {
+        & h4 {
+            color: #FFF;
+        }
+    }
 }
 
 
@@ -68,6 +103,9 @@ body.dark-theme {
             width: 98px;
         }
     }
+}
+.right-font {
+    border-radius: 16px;
 }
 /*SEARCH BAR*/
 .search-container {
