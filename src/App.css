@@ -69,6 +69,7 @@ body.dark-theme {
         &:focus {
             outline: none;
             background-color: #F4F4F4;
+            
         }
     }
     .error-text {
@@ -351,13 +352,18 @@ body.dark-theme {
     }
     .searchBar {
         width: 1440px;
+        cursor: url('images/mouse-pointer.svg'), auto;
     }
     .searchBar input {
         width: 500px;
         &:focus {
             outline: none;
             background-color: #F4F4F4;
+            cursor: url('images/mouse-pointer.svg'), auto;
         }
+    }
+    .inner-right, .synonymsP, .source-url img {
+        cursor: url('images/mouse-pointer.svg'), auto;
     }
     .found-sec {
         & h3 {
