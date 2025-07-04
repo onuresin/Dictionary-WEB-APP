@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import Book from "../images/book-shape.svg";
+import Vertical from "../images/vertical-short.svg";
+import DarkButton from "../images/darkmode.svg";
+import LightButton from "../images/Lightmode.svg";
 
 export default function Header() {
     const [selectFont, setSelectFont] = useState('Serif');
@@ -20,7 +24,7 @@ export default function Header() {
         <div className="header">
             <div className="header-inner">
                 <div className="inner-left">
-                    <img src="images/book-shape.svg" alt="book" />
+                    <img src={Book} alt="book" />
                 </div>
                 <div className="inner-right">
                     <span className="right-font">
@@ -30,12 +34,12 @@ export default function Header() {
                             <option value="monospace">Mono</option>
                         </select>
                     </span>
-                    <img src="images/vertical-short.svg" alt="vertical stick" />
+                    <img src={Vertical} alt="vertical stick" />
                     <span className="right-theme" onClick={handleThemeChange}>
                         {darkTheme ? 
-                            (<img src="images/darkmode.svg" alt="light mode" />) 
+                            (<img src={DarkButton} alt="light mode" />) 
                             : 
-                            (<img src="images/Lightmode.svg" alt="dark mode" />)
+                            (<img src={LightButton} alt="dark mode" />)
                         }
                     </span>
                 </div>

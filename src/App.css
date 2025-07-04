@@ -316,7 +316,7 @@ body.dark-theme {
             text-transform: lowercase;
         }
         & img {
-            height: 15px;
+            height: 2px;
             width: 700px;
         }
     }
@@ -393,7 +393,7 @@ body.dark-theme {
             text-transform: lowercase;
         }
         & img {
-            height: 15px;
+            height: 2px;
             width: 1380px;
         }
     }

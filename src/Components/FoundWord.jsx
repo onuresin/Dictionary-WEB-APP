@@ -1,3 +1,9 @@
+import HorizonStick from "../images/horizontal-stick.svg";
+import PlayButton from "../images/play-button.svg";
+import ExternaLink from "../images/external-link.svg";
+import Sad from "../images/sad.svg";
+
+
 const MeaningList = ({ meanings }) => (
     <ul>
         {meanings.map((meaning, index) => (
@@ -26,7 +32,7 @@ const FetchDatas = ({ fetchWord }) => (
                                                     <img onClick={() => {
                                                     const audio = new Audio(x.audio)
                                                     audio.play() }} 
-                                                    src="/images/play-button.svg" alt="play-nouns" />
+                                                    src={PlayButton} alt="play-nouns" />
                                                 </div>
                                             </>
                                         }
@@ -50,13 +56,13 @@ const SynonymsList = ({synonyms, setSearchTerm}) => (
 const SourceInfo = ({ sourceUrls }) => (
     <div className="source">
             <span className="stick">
-                <img src="images/horizontal-stick.svg"/>
+                <img src={HorizonStick}/>
             </span>
             <span className="source-bot">
                 <h5>Source</h5>
                 <span className="source-url" onClick={() => window.open(sourceUrls, '_blank')}>
                     {sourceUrls}
-                    <img src="images/external-link.svg" alt="{sourceUrls}" />
+                    <img src={ExternaLink} alt="{sourceUrls}" />
                 </span>
             </span>
     </div>
@@ -66,7 +72,7 @@ const WordType = ({ type, meanings, synonyms, setSearchTerm, sourceUrls }) => (
     <div className={type.toLowerCase()}>
         <span className="text-vertical">
             <h3>{type}</h3>
-            <img src="images/horizontal-stick.svg" alt="" />
+            <img src={HorizonStick} alt="" />
         </span>
        <span className="meanings">
             <p className="desc">Meaning</p>
@@ -110,7 +116,7 @@ export default function FoundWord({ fetchWord, setSearchTerm }) {
             <>
                 <div className="error-container">
                     <span>
-                        <img src="images/sad.svg" alt="😕" />
+                        <img src={Sad} alt="😕" />
                     </span>
                     <span className="error-text">
                         <h4>No Definitions Found</h4>
