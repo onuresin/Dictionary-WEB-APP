@@ -8,22 +8,21 @@ export default function App() {
   const [selectFont, setSelectFont] = useState('sans-serif')
   const [searchTerm, setSearchTerm] = useState('');
   const [fetchWord, setFetchWord] = useState(null); 
+
   const fetchData = async () => {
     try {
       const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`);
       const jsonData = await response.json();
-
-      // setSearchTerm(jsonData[0]); 
       setFetchWord(jsonData[0]);
-
-      
     } catch (error) {
       console.log(error);
     }
   };
-  useEffect(() => {
 
-    fetchData();
+  useEffect(() => {
+    if (searchTerm.trim() !== "") {      // <--- SADECE BOŞ DEĞİLSE ÇALIŞ
+      fetchData();
+    }
   }, [searchTerm]);
 
   return (

@@ -84,52 +84,37 @@ const WordType = ({ type, meanings, synonyms, setSearchTerm, sourceUrls }) => (
 )
 
 
-export default function FoundWord({ fetchWord, setSearchTerm }) {
-    console.log(fetchWord)
+export default function FoundWord({ fetchWord, setFetchWord }) {
+
+  if (!fetchWord) return null;
+
+  if (fetchWord.title === "No Definitions Found") {
     return (
-      <>
-        {fetchWord && (
-          
-          <>
-            {
-              <FetchDatas fetchWord={fetchWord}/>               
-            }
-            {fetchWord.meanings && fetchWord.meanings[0] && (
-              <WordType
-                type="Noun"
-                meanings={fetchWord.meanings[0].definitions}
-                synonyms={fetchWord.meanings[0].synonyms}
-                setSearchTerm={setSearchTerm}
-              />
-            )}
-            {fetchWord.meanings && fetchWord.meanings[1] && (
-              <WordType
-                type="Verb"
-                meanings={fetchWord.meanings[1].definitions}
-                sourceUrls={fetchWord.sourceUrls[0]}
-              />
-            )}
-          </>
-        )}
-        
-        {!fetchWord &&  (
-            <>
-                <div className="error-container">
-                    <span>
-                        <img src={Sad} alt="😕" />
-                    </span>
-                    <span className="error-text">
-                        <h4>No Definitions Found</h4>
-                        <h5>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</h5>
-                    </span>
-
-                </div>
-            </>
-        )}
-        {//searchbar boş olup olmadığı kontrol edilecek
-
-        }
-      </>
-
+      <div className="not-found">
+        <span role="img" aria-label="sad">😕</span>
+        <h2>No Definitions Found</h2>
+        <p>
+          Sorry pal, we couldn't find definitions for the word you were looking for.
+          You can try the search again at a later time or head to the web instead.
+        </p>
+      </div>
     );
   }
+
+  return (
+    <>
+      <FetchDatas fetchWord={fetchWord} />
+      {fetchWord.meanings &&
+        fetchWord.meanings.map((meaning, i) => (
+          <WordType
+            key={i}
+            type={meaning.partOfSpeech}
+            meanings={meaning.definitions}
+            synonyms={meaning.synonyms}
+            setSearchTerm={setFetchWord}
+            sourceUrls={fetchWord.sourceUrls}
+          />
+        ))}
+    </>
+  );
+}
