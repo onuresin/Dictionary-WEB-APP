@@ -13,14 +13,19 @@ export default function App() {
     try {
       const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`);
       const jsonData = await response.json();
-      setFetchWord(jsonData[0]);
+
+      if (Array.isArray(jsonData)) {
+        setFetchWord(jsonData[0]);
+      } else {
+        setFetchWord(jsonData);
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    if (searchTerm.trim() !== "") {      // <--- SADECE BOŞ DEĞİLSE ÇALIŞ
+    if (searchTerm.trim() !== "") { 
       fetchData();
     }
   }, [searchTerm]);

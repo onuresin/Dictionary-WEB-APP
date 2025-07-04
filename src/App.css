@@ -421,5 +421,8 @@ body.dark-theme {
         width: 736px;
         margin: 0 auto;
     }
+    .not-found {
+        text-align: center;
+    }
 
 }

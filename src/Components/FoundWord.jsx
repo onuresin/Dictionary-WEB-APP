@@ -1,7 +1,6 @@
 import HorizonStick from "../images/horizontal-stick.svg";
 import PlayButton from "../images/play-button.svg";
 import ExternaLink from "../images/external-link.svg";
-import Sad from "../images/sad.svg";
 
 
 const MeaningList = ({ meanings }) => (

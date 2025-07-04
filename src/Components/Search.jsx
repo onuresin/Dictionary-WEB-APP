@@ -8,11 +8,11 @@ export default function Search({searchTerm, setSearchTerm, fetchWord}) {
 
         const inputValue = e.target.searchInput.value.trim();
 
-        if (inputValue === "") {           // <--- BURADA TRIM KULLAN
+        if (inputValue === "") { 
             setError(true);
             return;
         }
-        setSearchTerm(inputValue);         // <--- ARANAN KELİMEYİ TRIM’LE SET ET
+        setSearchTerm(inputValue);     
         setError(false);
     }
     return (
